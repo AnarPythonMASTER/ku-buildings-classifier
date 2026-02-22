@@ -1,0 +1,19 @@
+# Python Environment, you may upload from requirements.txt
+.venv/
+__pycache__/
+
+# Massive Data Folders (Ignore contents, keep folder structure)
+data_raw/*
+!data_raw/.gitkeep
+
+dataset/*
+!dataset/.gitkeep
+
+videos/*
+!videos/.gitkeep
+
+test_images/*
+!test_images/.gitkeep
+
+# Ignore Archives, you have to upload this data from given link (Kaggle)
+*.zip
