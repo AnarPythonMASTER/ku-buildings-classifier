@@ -3,8 +3,8 @@ import json
 import numpy as np
 import tensorflow as tf
 
-# image predictor function
-def predict_single_image(image_path, model, class_mapping):
+# image predictor function:
+def predict_single_image(image_path, model, class_mapping, verbose = False):
     print(f"\nAnalyzing image: {image_path}...")
     
     img_size = (model.input_shape[1], model.input_shape[2])
@@ -20,10 +20,20 @@ def predict_single_image(image_path, model, class_mapping):
     
     predicted_building = class_mapping[predicted_index]
     
-    print("-" * 30)
-    print(f"Prediction:  {predicted_building.upper()}")
-    print(f"Confidence:  {confidence_score:.2f}%")
-    print("-" * 30)
+    if verbose = False:
+        print("-" * 30)
+        print(f"Prediction:  {predicted_building.upper()}")
+        print(f"Confidence:  {confidence_score:.2f}%")
+        print("-" * 30)
+    
+    elif verbose = True:
+        print("-" * 30)
+        print(f"Prediction:  {predicted_building.upper()}")
+        print(f"Confidence:  {confidence_score:.2f}%")
+        print("-" * 30)
+        additionally I want to show the other classes and their confidences
+        
+        
     
     return predicted_building, confidence_score
 
@@ -47,8 +57,3 @@ for filename in os.listdir(test_folder):
         
     full_image_path = os.path.join(test_folder, filename)
     predict_single_image(full_image_path, model, loaded_class_mapping)
-    
-def salam(x):
-    print(x)
-
-salam('Anar')
