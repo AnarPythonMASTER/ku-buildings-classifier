@@ -57,3 +57,9 @@ def saqol(x):
     print(x)
 
 saqol("Shahbaz")
+
+def bashuvaa(x):
+    print(x=(x,"Bashuvaa"))
+
+bashuvaa(x="mama qurban")
+    
