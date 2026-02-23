@@ -3,8 +3,17 @@ import json
 import numpy as np
 import tensorflow as tf
 
+
+# execution
+test_folder = r"C:\Users\Shahbaz\Desktop\dl\test_images"
+MAPPING_PATH = r"C:\Users\Shahbaz\Desktop\dl\models\class_mapping.json"
+MODEL_PATH = r"C:\Users\Shahbaz\Desktop\dl\models\cnn_model_increased_image.keras"
+
+ADDITIONAL_CLASSES = True # true: means it will show the confidence of other classes as well if False: then only predicted 
+
+
 # image predictor function:
-def predict_single_image(image_path, model, class_mapping, verbose = False):
+def predict_single_image(image_path, model, class_mapping, verbose=False):
     print(f"\nAnalyzing image: {image_path}...")
     
     img_size = (model.input_shape[1], model.input_shape[2])
@@ -20,28 +29,28 @@ def predict_single_image(image_path, model, class_mapping, verbose = False):
     
     predicted_building = class_mapping[predicted_index]
     
-    if verbose == False:
-        print("-" * 30)
-        print(f"Prediction:  {predicted_building.upper()}")
-        print(f"Confidence:  {confidence_score:.2f}%")
-        print("-" * 30)
+    print("-" * 30)
+    print(f"Prediction:  {predicted_building.upper()}")
+    print(f"Confidence:  {confidence_score:.2f}%")
+    print("-" * 30)
     
-    # elif verbose = True:
-    #     print("-" * 30)
-    #     print(f"Prediction:  {predicted_building.upper()}")
-    #     print(f"Confidence:  {confidence_score:.2f}%")
-    #     print("-" * 30)
-    #     additionally I want to show the other classes and their confidences
+    # confidences of all
+    if verbose:
+        print("Other class confidences:")
+        class_confidences = []
+        for i, prob in enumerate(predictions[0]):
+            class_confidences.append((class_mapping[i], prob * 100))
+            
+        class_confidences.sort(key=lambda x: x[1], reverse=True)
         
+        # formatting
+        for name, conf in class_confidences:
+            if name != predicted_building: # if we win then the rest will be shown
+                print(f"{name:<30}: {conf:>5.2f}%")
+        print("-" * 30)
         
-    
     return predicted_building, confidence_score
 
-
-# execution
-test_folder = r"C:\Users\Shahbaz\Desktop\dl\test_images"
-MAPPING_PATH = r"C:\Users\Shahbaz\Desktop\dl\models\class_mapping.json"
-MODEL_PATH = r"C:\Users\Shahbaz\Desktop\dl\models\cnn_model_increased_image.keras"
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
@@ -56,6 +65,4 @@ for filename in os.listdir(test_folder):
         continue 
         
     full_image_path = os.path.join(test_folder, filename)
-    predict_single_image(full_image_path, model, loaded_class_mapping)
-    
-a=5
+    predict_single_image(full_image_path, model, loaded_class_mapping, ADDITIONAL_CLASSES)
