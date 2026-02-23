@@ -94,15 +94,3 @@ python implementation.py
 
 * **Shahbaz Khalilli** * **Anar Jafarli** ---
 *Code licensed under MIT. Dataset licensed under CC BY 4.0.*
-
-```
-
-### Next Steps:
-1. Copy the text block above.
-2. Open the `README.md` file in your code editor.
-3. Paste the text and save the file.
-4. Run `git add README.md`, then `git commit -m "Add detailed README"`, and `git push` to update GitHub!
-
-How does the story of your project look to you?
-
-```
