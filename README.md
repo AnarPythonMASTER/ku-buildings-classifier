@@ -1,4 +1,3 @@
-```markdown
 # KU Ingolstadt Building Classifier 🏫
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
@@ -37,7 +36,7 @@ After an initial phase where we separated buildings by specific angles (21 class
 We built a custom CNN using Keras `Sequential` API. 
 * **Input Shape:** 224 x 168 x 3 (RGB images)
 * **Architecture:** 3 Convolutional Blocks (32 -> 64 -> 128 filters) with Max Pooling, followed by a Flatten layer, a Dense layer of 64 neurons, and a final Softmax output.
-* **Optimization Strategy:** We initially tested SGD but observed poor convergence. Switching to the **Adam Optimizer** with a low learning rate ($10^{-5}$) yielded stable and superior results.
+* **Optimization Strategy:** We initially tested SGD but observed poor convergence. Switching to the **Adam Optimizer** with a low learning rate (10^-5) yielded stable and superior results.
 * **Callbacks:** We utilized `EarlyStopping` (restoring best weights), `ReduceLROnPlateau`, and custom `ModelCheckpoint` callbacks to monitor validation loss.
 
 ### 📊 Results
@@ -60,8 +59,6 @@ We built a custom CNN using Keras `Sequential` API.
  ┣ 📜 implementation.py  # Real-time inference script for new images
  ┣ 📜 requirements.txt   # Python dependencies
  ┗ 📜 README.md
-
-```
 
 ## 🚀 How to Run Locally
 
