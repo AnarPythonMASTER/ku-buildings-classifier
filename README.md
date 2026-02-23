@@ -9,11 +9,11 @@
 ## 📌 Project Overview
 This project is a custom Convolutional Neural Network (CNN) built to classify images of famous buildings located near the Catholic University of Eichstätt-Ingolstadt (KU) in Bayern, Germany. 
 
-The primary motivation for this project was to apply concepts learned in our **Deep Learning** course taught by Professor Dr. Felix Voigtlaender and Dr. Hannes Matt. Our long-term vision is to simulate a mobile platform where users can scan a building with their phone camera to instantly retrieve its name and information.
+The primary motivation for this project was to apply concepts learned in our **Deep Learning** course taught by Professor Dr. Felix Voigtlaender and Dr. Hannes Matt. Our long-term vision is to simulate a platform where users can scan a building with their phone camera to instantly retrieve its name and information.
 
 ## 💾 The Dataset (Custom Data Collection)
 **Note:** Due to the large size of the dataset (17+ GB), the raw images and videos are hosted externally on Kaggle.
-* 🔗 **Download the dataset here:** [INSERT KAGGLE LINK HERE]
+* 🔗 **Download the dataset here:** https://www.kaggle.com/datasets/shahbazkhalilli/ku-ingolstadt-campus-buildings?select=dataset
 
 **How we built the dataset:**
 * We manually collected over **2,670 raw images** around the MIDS building and KU campus.
