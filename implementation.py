@@ -66,3 +66,5 @@ for filename in os.listdir(test_folder):
         
     full_image_path = os.path.join(test_folder, filename)
     predict_single_image(full_image_path, model, loaded_class_mapping, ADDITIONAL_CLASSES)
+    
+#
