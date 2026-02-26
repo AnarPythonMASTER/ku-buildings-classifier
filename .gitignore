@@ -9,6 +9,9 @@ data_raw/*
 dataset/*
 !dataset/.gitkeep
 
+test_images/*
+!test_images/.gitkeep
+
 videos/*
 !videos/.gitkeep
 
