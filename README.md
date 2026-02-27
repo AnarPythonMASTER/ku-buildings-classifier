@@ -16,7 +16,7 @@ The primary motivation for this project was to apply concepts learned in our **D
 * 🔗 **Download the dataset here:** https://www.kaggle.com/datasets/shahbazkhalilli/ku-ingolstadt-campus-buildings?select=dataset
 
 **How we built the dataset:**
-* We manually collected over **2,670 raw images** around the MIDS building and KU campus.
+* We manually collected over **2,670(now ~8500) raw images** around the MIDS building and KU campus.
 * To make the model robust for real-world application, we mimicked the behavior of a person walking along standard pathways and scanning buildings with their phone from various angles and distances.
 * We further expanded our dataset by recording walking videos and programmatically extracting frames (2 frames per second) to maximize our training data.
 
